@@ -1,0 +1,16 @@
+.TextBox{
+    padding: 10px;
+    margin: 5px;
+}
+
+.Button{
+    padding: 10px;
+    margin: 5px;
+    color: white;
+    background-color: green;
+}
+
+.Button:hover{
+    cursor: pointer;
+    background-color: lightseagreen;
+}

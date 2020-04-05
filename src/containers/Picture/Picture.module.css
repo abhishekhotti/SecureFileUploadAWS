@@ -1,0 +1,6 @@
+.Picture{
+    padding-top: 15vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
