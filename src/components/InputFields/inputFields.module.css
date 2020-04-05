@@ -12,5 +12,6 @@
 
 .Button:hover{
     cursor: pointer;
-    background-color: lightseagreen;
+    background-color: #cccccc;
+    color: green;
 }

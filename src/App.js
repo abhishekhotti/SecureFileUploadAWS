@@ -7,12 +7,12 @@ import {Switch, Route} from 'react-router-dom';
 class App extends Component {
   render(){
     return (
-      <div className="App">
-        <Switch>
-          <Route path="/picture" exact component={Picture} />
-          <Route path="/" component={LoginPage}/>
-        </Switch>
-      </div>
+        <div className="App">
+          <Switch>
+            <Route path="/picture" component={Picture} />
+            <Route path="/" component={LoginPage}/>
+          </Switch>
+        </div>
     );
   }
 }

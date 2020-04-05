@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import classes from './Picture.module.css';
-import Camera from 'react-html5-camera-photo';
-import 'react-html5-camera-photo/build/css/index.css';
+import Webcam from "react-webcam";
 import InputFields from "../../components/InputFields/inputFields";
 import Aux from "../../hoc/Aux";
 import axios from "../../hoc/axios";
@@ -13,7 +12,7 @@ class Picture extends Component {
     }
 
     onCaptureButtonClick = (event) => {
-        console.log(event);
+        console.log(this.props);
         if(event.target.value === 'Capture')
         {
             const capture = this.state.webcamRef.current.getScreenshot();
@@ -39,13 +38,14 @@ class Picture extends Component {
             });
             console.log("continue")
         }
+        
     }
 
     render() {
         let captureScreen = (
             <Aux>
-            <Camera onTakePhoto = { (dataUri) => { this.onCaptureButtonClick(dataUri); } }/>
-            {/* <InputFields type = "button" value = "Capture" onClick = {this.onCaptureButtonClick}/> */}
+                <Webcam audio={false} ref = {this.state.webcamRef} screenshotFormat="image/jpeg"/>
+                <InputFields type = "button" value = "Capture" onClick = {this.onCaptureButtonClick}/>
             </Aux>
         )
         if (this.state.base64Image) {

@@ -1,6 +1,7 @@
 .Picture{
-    padding-top: 15vh;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
     display: grid;
-    justify-content: center;
-    align-items: center;
 }
