@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import InputFields from "../../components/InputFields/inputFields";
 import classes from "./LoginPage.module.css";
+import {connect} from 'react-redux';
+import * as actions from "../../store/action/index"
 
 class LoginPage extends Component {
     state = {
-        username: null
+        username: ''
     }
     onButtonClickHandler = () => {
+        this.props.validateUserName(this.state.username)
         if(this.state.username === null || this.state.username.length === 0)
             alert("Enter Your Username");
         else
@@ -24,6 +27,7 @@ class LoginPage extends Component {
                 <InputFields 
                     type = "text"
                     placeholder = "Username"
+                    value={this.state.username}
                     onChange = {this.changeUsernameHandler}
                 />
                 <InputFields 
@@ -36,4 +40,16 @@ class LoginPage extends Component {
     }
 }
 
-export default LoginPage;
+const mapDispatchToProps = dispatch => {
+    return {
+        validateUserName: (user) => dispatch(actions.validateUsername(user))
+    }
+}
+
+const mapStateToProps = state => {
+    return {
+        username: state.username
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginPage);

@@ -1,0 +1,56 @@
+
+.Card {
+  background-color: white;
+  padding: 32px;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11), 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+  margin: 5% auto;
+}
+
+.BoxDiv {
+  box-sizing: border-box;
+}
+
+.uploadBtnWrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.btn {
+  border: 2px solid #4caf50;
+  color: #4caf50;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.uploadBtnWrapper input[type=file] {
+  cursor: pointer;
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.uploadBtnWrapper:hover .btn{
+  border: 2px solid tomato;
+  color: tomato;
+}
+
+.table{
+  width: fit-content;
+  margin: unset;
+  border-spacing: 15px; 
+}
+
+.tr{
+  margin: 10px;
+}
+
